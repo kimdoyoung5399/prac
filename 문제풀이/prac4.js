@@ -1,5 +1,5 @@
-let a = ["mislav", "stanko", "mislav", "ana"];
-let b = ["stanko", "ana", "mislav"];
+let participant = ["mislav", "stanko", "mislav", "ana"];
+let completion = ["stanko", "ana", "mislav"];
 // c = "leo";
 // 		"vinko"
 // ["mislav", "stanko", "mislav", "ana"]
@@ -8,13 +8,12 @@ let b = ["stanko", "ana", "mislav"];
 // let d = [];
 // let c = a.filter((v) => (b.includes(v) ? d.push("") : d.push(v)));
 
-// console.log(d.join(""));
-
-console.log(c);
-// for (let i = 0; i < c.length; i++) {
-//   if()
-// }
-// function solution(participant, completion) {
-//   completion.map((v) => participant.splice(participant.indexOf(v), 1));
-//   return participant[0];
-// }
+function solution(participant, completion) {
+  participant.sort();
+  completion.sort();
+  for (let i = 0; i < participant.length; i++) {
+    if (participant[i] !== completion[i]) {
+      return participant[i];
+    }
+  }
+}
